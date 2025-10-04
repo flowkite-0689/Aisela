@@ -11,27 +11,32 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: { title: '首页' }
     },
     {
       path: '/plot',
       name: 'plot',
-      component: PlotView
+      component: PlotView,
+      meta: { title: '剧情大纲' }
     },
     {
       path: '/characters',
       name: 'characters',
-      component: CharacterView
+      component: CharacterView,
+      meta: { title: '人物设定' }
     },
     {
       path: '/world',
       name: 'world',
-      component: WorldView
+      component: WorldView,
+      meta: { title: '世界观' }
     },
     {
       path: '/timeline',
       name: 'timeline',
-      component: TimelineView
+      component: TimelineView,
+      meta: { title: '时间线' }
     }
   ]
 })

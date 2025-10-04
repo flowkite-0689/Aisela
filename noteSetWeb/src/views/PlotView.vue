@@ -2,357 +2,1227 @@
 import { ref } from 'vue'
 
 const plotData = ref({
-  theme: "一个关于身份、命运与救赎的奇幻故事，围绕魔族王子与精灵公主的禁忌之恋，以及他们的混血后代打破三族仇恨循环的成长历程。",
-  acts: [
+  theme: {
+    title: "成长与救赎",
+    description: "在战争与仇恨的阴霾下，三个年轻人如何超越种族偏见，寻找真正的力量与和平",
+    keywords: ["成长", "救赎", "友谊", "牺牲", "和平"]
+  },
+  trilogy: [
     {
-      title: "第一幕：血色盟约的阴谋",
-      time: "星历227年春分",
-      location: "魔族边境城市",
-      events: [
-        {
-          title: "和谈破裂",
-          description: "魔王洛瑟恩与勇者卡莱尔在边境城市进行秘密和谈，精灵公主艾莉安以个人身份参与，希望促成三族和平。暗影商会与教廷联手破坏和谈。"
-        },
-        {
-          title: "刺杀事件",
-          description: "议事厅遭到袭击，艾莉安中毒，莉娜抱着1岁的瑟莉安逃到议事厅。艾莉安用尽最后力气将莉娜和女儿传送到城外。卡莱尔被洛瑟恩的内鬼杀死，洛瑟恩被手下下毒。"
-        },
-        {
-          title: "后续影响",
-          description: "人类向魔族发起全面战争，精灵王被长老会记忆篡改，误以为洛瑟恩杀死了艾莉安，精灵也加入战争，三族陷入混战。"
-        }
-      ]
+      book: "第一部：觉醒",
+      subtitle: "血与火的洗礼",
+      status: "已完成",
+      progress: 100,
+      wordCount: "约15万字",
+      description: "西里斯从一个普通的人类少年，经历家园毁灭的痛苦，在三王冠学院中觉醒内在的力量，与凯恩、艾薇拉建立深厚友谊。",
+      keyEvents: [
+        "绿荫镇毁灭事件",
+        "西里斯进入三王冠学院",
+        "与凯恩、艾薇拉相遇",
+        "发现自身异能",
+        "第一次种族冲突经历"
+      ],
+      themes: ["身份认知", "友谊建立", "力量觉醒"]
     },
     {
-      title: "第二幕：隐藏的成长",
-      time: "星历228-241年",
-      location: "人类王国边境小镇绿叶镇",
-      events: [
-        {
-          title: "瑟莉安的重塑与收养",
-          description: "莉娜将瑟莉安带回精灵神树，重塑身体为男性，新名字西里斯·弗拉尔，被弗拉尔家族收养。"
-        },
-        {
-          title: "平凡生活中的异常",
-          description: "西里斯能看到植物就知道其作用，实际继承了艾莉安的能力。莉娜伪装成游商定期检查封印。12岁生日时封印开始松动。"
-        }
-      ]
+      book: "第二部：试炼",
+      subtitle: "黑暗中的选择",
+      status: "进行中",
+      progress: 65,
+      wordCount: "约9万字",
+      description: "三人面临更大的挑战和道德选择。瑟莉安的复活带来新的变数，而教廷的阴谋逐渐浮出水面。",
+      keyEvents: [
+        "瑟莉安的神秘复活",
+        "暗影商会的介入",
+        "教廷阴谋初现",
+        "三族关系恶化",
+        "个人信念的考验"
+      ],
+      themes: ["道德选择", "信任危机", "力量的代价"]
     },
     {
-      title: "第三幕：学院篇章",
-      time: "星历241-243年",
-      location: "三王冠联合战争学院",
-      events: [
-        {
-          title: "学院入学",
-          description: "西里斯14岁进入学院，魔法天赋为0但草药学天赋极高，结识新一代勇者凯恩·曙光和艾薇拉·银辉。"
-        },
-        {
-          title: "梦境城镇事件",
-          description: "草药学老师埃德蒙利用精灵秘宝抽取学生生命力复活亡妻，西里斯通过分析植物异常定位核心位置，成功救出同伴。"
-        }
-      ]
-    },
-    {
-      title: "第四幕：觉醒与复仇",
-      time: "星历243年",
-      location: "多个地点",
-      events: [
-        {
-          title: "家园毁灭",
-          description: "血翼兵团袭击绿荫镇，弗拉尔夫妇牺牲保护镇民，西里斯性格从温和变得偏执，开始秘密研究魔族解剖学。"
-        },
-        {
-          title: "龙瞳移植",
-          description: "西里斯利用埃德蒙的笔记给自己移植龙瞳，失明但获得魔力，失去读取植物的能力，瞳纹无法控制地显现。"
-        },
-        {
-          title: "假装叛变",
-          description: "参加讨伐魔王的行动，面对洛瑟恩时假装叛变，洛瑟恩通过龙瞳瞳纹认出西里斯是自己的女儿。"
-        }
-      ]
-    },
-    {
-      title: "第五幕：真相与救赎",
-      time: "星历243年末",
-      location: "战场",
-      events: [
-        {
-          title: "父女相认",
-          description: "洛瑟恩与西里斯在战场上相认，西里斯了解到自己的真实身世和父母的爱情。"
-        },
-        {
-          title: "破坏古神复活",
-          description: "西里斯为保护凯恩，启动传送法阵与洛瑟恩一起离开，意外破坏了教廷利用两败俱伤来复活古神的计划。"
-        },
-        {
-          title: "打破轮回",
-          description: "莉娜揭露精灵长老会参与刺杀的证据，暗影商会的阴谋被曝光，三族开始反思仇恨的根源，寻求真正的和平。"
-        }
-      ]
+      book: "第三部：救赎",
+      subtitle: "新世界的黎明",
+      status: "规划中",
+      progress: 0,
+      wordCount: "预计12万字",
+      description: "最终的决战与救赎。主角们必须面对古神复活的威胁，做出最终的牺牲与选择，为三族寻找真正的和平之路。",
+      keyEvents: [
+        "古神复活危机",
+        "三族联合抗敌",
+        "最终决战",
+        "牺牲与救赎",
+        "新秩序建立"
+      ],
+      themes: ["终极救赎", "团结合作", "新世界秩序"]
     }
   ],
-  conflicts: [
-    { title: "身份认同", description: "西里斯从人类到发现魔族血统的身份转变" },
-    { title: "复仇与宽恕", description: "个人仇恨与种族和解的矛盾" },
-    { title: "真相与谎言", description: "历史真相被掩盖，需要勇气揭露" },
-    { title: "命运与选择", description: "血脉宿命与个人意志的较量" }
+  acts: [
+    {
+      act: "第一幕",
+      title: "平静的破碎",
+      chapters: "第1-3章",
+      description: "西里斯在绿荫镇的平静生活，以及这份平静被血翼兵团彻底摧毁的过程。",
+      keyMoments: [
+        "西里斯的日常生活描写",
+        "血翼兵团突然袭击",
+        "养父母的牺牲",
+        "西里斯的逃亡与觉醒"
+      ],
+      emotionalArc: "从平静到绝望，再到愤怒与决心"
+    },
+    {
+      act: "第二幕",
+      title: "新的开始",
+      chapters: "第4-8章",
+      description: "西里斯进入三王冠学院，遇到凯恩和艾薇拉，开始新的生活并逐渐发现自己的能力。",
+      keyMoments: [
+        "初入学院的不适应",
+        "与凯恩的初次冲突与和解",
+        "艾薇拉的温暖帮助",
+        "能力的初次显现",
+        "友谊的建立"
+      ],
+      emotionalArc: "从孤独防备到逐渐信任，找到归属感"
+    },
+    {
+      act: "第三幕",
+      title: "成长的代价",
+      chapters: "第9-15章",
+      description: "三人面临各种挑战和考验，在冲突中成长，但也付出了沉重的代价。",
+      keyMoments: [
+        "学院内的种族冲突",
+        "西里斯能力的失控",
+        "凯恩的身份危机",
+        "艾薇拉的家族压力",
+        "友谊的第一次重大考验"
+      ],
+      emotionalArc: "在挫折中成长，学会承担责任"
+    }
   ],
+  characters: {
+    protagonists: [
+      {
+        name: "西里斯",
+        role: "主角",
+        arc: "从复仇者到守护者",
+        growth: "学会放下仇恨，用力量保护而非毁灭"
+      },
+      {
+        name: "凯恩",
+        role: "主角",
+        arc: "从叛逆者到领导者",
+        growth: "承担起魔族未来的责任，成为桥梁"
+      },
+      {
+        name: "艾薇拉",
+        role: "主角",
+        arc: "从理想主义者到现实主义者",
+        growth: "在理想与现实间找到平衡，成为智慧的引导者"
+      }
+    ],
+    antagonists: [
+      {
+        name: "洛瑟恩",
+        role: "反派",
+        motivation: "维护魔族传统与荣耀",
+        conflict: "与新一代的价值观冲突"
+      },
+      {
+        name: "教廷",
+        role: "幕后黑手",
+        motivation: "复活古神，重塑世界秩序",
+        conflict: "代表极端的秩序与控制"
+      }
+    ]
+  },
   themes: [
-    { title: "打破偏见", description: "不同种族之间的理解与和解" },
-    { title: "成长代价", description: "力量的获得往往伴随着失去" },
-    { title: "爱的传承", description: "父母的爱如何影响下一代的选择" },
-    { title: "希望之光", description: "即使在最黑暗的时刻，也要追逐光明" }
+    {
+      theme: "成长与蜕变",
+      description: "主角们从稚嫩走向成熟，在痛苦中学会承担责任",
+      examples: ["西里斯从复仇转向保护", "凯恩从叛逆到承担", "艾薇拉从理想主义到现实主义"]
+    },
+    {
+      theme: "友谊与信任",
+      description: "跨越种族的友谊如何在困境中建立和考验",
+      examples: ["三人初遇的互不信任", "共同面对危机建立友谊", "信任危机的考验与重建"]
+    },
+    {
+      theme: "偏见与理解",
+      description: "种族偏见的根源以及如何通过理解消除隔阂",
+      examples: ["各族的历史恩怨", "个体超越群体偏见", "通过行动改变他人看法"]
+    },
+    {
+      theme: "力量与责任",
+      description: "强大的力量必须伴随相应的责任与智慧",
+      examples: ["西里斯能力失控的后果", "凯恩的血脉责任", "艾薇拉的智慧引导"]
+    },
+    {
+      theme: "牺牲与救赎",
+      description: "真正的成长往往需要牺牲，而救赎来自于对他人的关爱",
+      examples: ["养父母的牺牲", "瑟莉安的选择", "最终的救赎之路"]
+    }
   ]
 })
+
+const selectedTab = ref('overview')
+
+const tabs = [
+  { id: 'overview', label: '概览', icon: '📖' },
+  { id: 'trilogy', label: '三部曲', icon: '📚' },
+  { id: 'acts', label: '剧情结构', icon: '🎭' },
+  { id: 'characters', label: '角色弧线', icon: '👥' },
+  { id: 'themes', label: '主题分析', icon: '💭' }
+]
+
+const getStatusColor = (status: string) => {
+  switch (status) {
+    case '已完成':
+      return 'completed'
+    case '进行中':
+      return 'in-progress'
+    case '规划中':
+      return 'planned'
+    default:
+      return 'default'
+  }
+}
 </script>
 
 <template>
   <div class="plot-view">
-    <div class="container">
-      <h1 class="page-title">剧情大纲</h1>
+    <!-- 页面标题 -->
+    <div class="page-header">
+      <h1 class="page-title">
+        <span class="title-icon">📖</span>
+        剧情设定
+      </h1>
+      <p class="page-description">
+        探索故事的核心主题、情节结构和角色发展弧线
+      </p>
+    </div>
 
-      <section class="theme-section">
-        <div class="theme-card">
-          <h2>📖 故事核心主题</h2>
-          <p>{{ plotData.theme }}</p>
+    <!-- 导航标签 -->
+    <div class="tab-navigation">
+      <button
+        v-for="tab in tabs"
+        :key="tab.id"
+        @click="selectedTab = tab.id"
+        :class="['tab-btn', { active: selectedTab === tab.id }]"
+      >
+        <span class="tab-icon">{{ tab.icon }}</span>
+        <span class="tab-label">{{ tab.label }}</span>
+      </button>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content-area">
+      <!-- 概览标签页 -->
+      <div v-if="selectedTab === 'overview'" class="tab-content">
+        <div class="overview-section">
+          <!-- 主题卡片 -->
+          <div class="theme-card">
+            <div class="theme-header">
+              <h2 class="theme-title">{{ plotData.theme.title }}</h2>
+              <div class="theme-keywords">
+                <span
+                  v-for="keyword in plotData.theme.keywords"
+                  :key="keyword"
+                  class="keyword-tag"
+                >
+                  {{ keyword }}
+                </span>
+              </div>
+            </div>
+            <p class="theme-description">{{ plotData.theme.description }}</p>
+          </div>
+
+          <!-- 进度概览 -->
+          <div class="progress-overview">
+            <h3 class="section-title">
+              <span class="title-icon">📊</span>
+              创作进度
+            </h3>
+            <div class="progress-stats">
+              <div
+                v-for="book in plotData.trilogy"
+                :key="book.book"
+                class="progress-item"
+              >
+                <div class="progress-header">
+                  <span class="book-title">{{ book.book }}</span>
+                  <span :class="['status-badge', getStatusColor(book.status)]">
+                    {{ book.status }}
+                  </span>
+                </div>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill"
+                    :style="{ width: book.progress + '%' }"
+                  ></div>
+                </div>
+                <div class="progress-details">
+                  <span class="progress-text">{{ book.progress }}%</span>
+                  <span class="word-count">{{ book.wordCount }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
 
-      <section class="acts-section">
-        <h2 class="section-title">🎭 主要剧情线</h2>
-        <div class="acts-container">
+      <!-- 三部曲标签页 -->
+      <div v-if="selectedTab === 'trilogy'" class="tab-content">
+        <div class="trilogy-grid">
+          <div
+            v-for="(book, index) in plotData.trilogy"
+            :key="book.book"
+            class="book-card"
+          >
+            <div class="book-header">
+              <div class="book-number">{{ index + 1 }}</div>
+              <div class="book-info">
+                <h3 class="book-title">{{ book.book }}</h3>
+                <p class="book-subtitle">{{ book.subtitle }}</p>
+              </div>
+              <div class="book-meta">
+                <span :class="['status-badge', getStatusColor(book.status)]">
+                  {{ book.status }}
+                </span>
+                <span class="word-count">{{ book.wordCount }}</span>
+              </div>
+            </div>
+
+            <div class="book-content">
+              <p class="book-description">{{ book.description }}</p>
+
+              <div class="book-section">
+                <h4 class="section-subtitle">🎯 关键事件</h4>
+                <ul class="event-list">
+                  <li v-for="event in book.keyEvents" :key="event" class="event-item">
+                    {{ event }}
+                  </li>
+                </ul>
+              </div>
+
+              <div class="book-section">
+                <h4 class="section-subtitle">💭 核心主题</h4>
+                <div class="theme-tags">
+                  <span
+                    v-for="theme in book.themes"
+                    :key="theme"
+                    class="theme-tag"
+                  >
+                    {{ theme }}
+                  </span>
+                </div>
+              </div>
+
+              <div class="progress-section">
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill"
+                    :style="{ width: book.progress + '%' }"
+                  ></div>
+                </div>
+                <span class="progress-text">{{ book.progress }}% 完成</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 剧情结构标签页 -->
+      <div v-if="selectedTab === 'acts'" class="tab-content">
+        <div class="acts-timeline">
           <div
             v-for="(act, index) in plotData.acts"
-            :key="index"
-            class="act-card"
+            :key="act.act"
+            class="act-item"
           >
-            <div class="act-header">
-              <h3 class="act-title">{{ act.title }}</h3>
-              <div class="act-meta">
-                <span class="act-time">⏰ {{ act.time }}</span>
-                <span class="act-location">📍 {{ act.location }}</span>
+            <div class="act-marker">{{ index + 1 }}</div>
+            <div class="act-content">
+              <div class="act-header">
+                <h3 class="act-title">{{ act.title }}</h3>
+                <div class="act-meta">
+                  <span class="act-number">{{ act.act }}</span>
+                  <span class="chapter-range">{{ act.chapters }}</span>
+                </div>
               </div>
-            </div>
 
-            <div class="events-list">
-              <div
-                v-for="(event, eventIndex) in act.events"
-                :key="eventIndex"
-                class="event-item"
-              >
-                <h4 class="event-title">{{ event.title }}</h4>
-                <p class="event-description">{{ event.description }}</p>
+              <p class="act-description">{{ act.description }}</p>
+
+              <div class="act-details">
+                <div class="detail-section">
+                  <h4 class="detail-title">🎬 关键时刻</h4>
+                  <ul class="moment-list">
+                    <li
+                      v-for="moment in act.keyMoments"
+                      :key="moment"
+                      class="moment-item"
+                    >
+                      {{ moment }}
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h4 class="detail-title">💡 情感弧线</h4>
+                  <p class="emotional-arc">{{ act.emotionalArc }}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section class="details-section">
-        <div class="details-grid">
-          <div class="detail-card">
-            <h3>🎯 核心冲突</h3>
-            <div class="conflict-list">
+      <!-- 角色弧线标签页 -->
+      <div v-if="selectedTab === 'characters'" class="tab-content">
+        <div class="characters-section">
+          <!-- 主角 -->
+          <div class="character-group">
+            <h3 class="group-title">
+              <span class="title-icon">⭐</span>
+              主要角色
+            </h3>
+            <div class="character-grid">
               <div
-                v-for="(conflict, index) in plotData.conflicts"
-                :key="index"
-                class="conflict-item"
+                v-for="char in plotData.characters.protagonists"
+                :key="char.name"
+                class="character-card protagonist"
               >
-                <strong>{{ conflict.title }}</strong>：{{ conflict.description }}
+                <div class="character-header">
+                  <h4 class="character-name">{{ char.name }}</h4>
+                  <span class="character-role">{{ char.role }}</span>
+                </div>
+                <div class="character-arc">
+                  <strong>发展弧线：</strong>{{ char.arc }}
+                </div>
+                <div class="character-growth">
+                  <strong>成长历程：</strong>{{ char.growth }}
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="detail-card">
-            <h3>🌟 主题寓意</h3>
-            <div class="theme-list">
+          <!-- 反派 -->
+          <div class="character-group">
+            <h3 class="group-title">
+              <span class="title-icon">⚡</span>
+              对立角色
+            </h3>
+            <div class="character-grid">
               <div
-                v-for="(theme, index) in plotData.themes"
-                :key="index"
-                class="theme-item"
+                v-for="char in plotData.characters.antagonists"
+                :key="char.name"
+                class="character-card antagonist"
               >
-                <strong>{{ theme.title }}</strong>：{{ theme.description }}
+                <div class="character-header">
+                  <h4 class="character-name">{{ char.name }}</h4>
+                  <span class="character-role">{{ char.role }}</span>
+                </div>
+                <div class="character-motivation">
+                  <strong>动机：</strong>{{ char.motivation }}
+                </div>
+                <div class="character-conflict">
+                  <strong>冲突：</strong>{{ char.conflict }}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      <!-- 主题分析标签页 -->
+      <div v-if="selectedTab === 'themes'" class="tab-content">
+        <div class="themes-grid">
+          <div
+            v-for="themeItem in plotData.themes"
+            :key="themeItem.theme"
+            class="theme-analysis-card"
+          >
+            <div class="theme-card-header">
+              <h3 class="theme-card-title">{{ themeItem.theme }}</h3>
+            </div>
+            <div class="theme-card-content">
+              <p class="theme-card-description">{{ themeItem.description }}</p>
+              <div class="theme-examples">
+                <h4 class="examples-title">📝 具体体现</h4>
+                <ul class="examples-list">
+                  <li
+                    v-for="example in themeItem.examples"
+                    :key="example"
+                    class="example-item"
+                  >
+                    {{ example }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
 .plot-view {
-  min-height: 100vh;
-  padding: 20px 0;
-}
-
-.container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #d0d7de;
 }
 
 .page-title {
-  text-align: center;
-  font-size: 3rem;
-  color: white;
-  margin-bottom: 40px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 32px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
-.theme-section {
-  margin-bottom: 60px;
+.title-icon {
+  font-size: 28px;
+}
+
+.page-description {
+  font-size: 16px;
+  color: #656d76;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.tab-navigation {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  background: #f6f8fa;
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #656d76;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.tab-btn:hover {
+  color: #24292f;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.tab-btn.active {
+  background: #ffffff;
+  color: #0969da;
+  box-shadow: 0 1px 3px rgba(31, 35, 40, 0.12);
+}
+
+.tab-icon {
+  font-size: 16px;
+}
+
+.tab-label {
+  font-weight: 500;
+}
+
+.content-area {
+  min-height: 400px;
+}
+
+.tab-content {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 状态徽章 */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.status-badge.completed {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.status-badge.in-progress {
+  background: #dbeafe;
+  color: #0969da;
+}
+
+.status-badge.planned {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+/* 进度条 */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #f6f8fa;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0969da, #58a6ff);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* 概览页面 */
+.overview-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
 }
 
 .theme-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.2s ease;
 }
 
-.theme-card h2 {
-  color: #2c3e50;
-  margin-bottom: 20px;
-  font-size: 1.8rem;
+.theme-card:hover {
+  border-color: #0969da;
+  box-shadow: 0 8px 24px rgba(9, 105, 218, 0.12);
 }
 
-.theme-card p {
-  color: #34495e;
-  font-size: 1.1rem;
-  line-height: 1.8;
+.theme-header {
+  margin-bottom: 16px;
+}
+
+.theme-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 12px 0;
+}
+
+.theme-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.keyword-tag {
+  background: #f0f9ff;
+  color: #0969da;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.theme-description {
+  font-size: 16px;
+  color: #656d76;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.progress-overview {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  padding: 20px;
 }
 
 .section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 40px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.acts-container {
+.progress-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.progress-item {
+  padding: 16px;
+  background: #f6f8fa;
+  border-radius: 8px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.book-title {
+  font-weight: 500;
+  color: #24292f;
+  font-size: 14px;
+}
+
+.progress-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #656d76;
+}
+
+.progress-text {
+  font-weight: 500;
+}
+
+.word-count {
+  color: #656d76;
+}
+
+/* 三部曲页面 */
+.trilogy-grid {
   display: grid;
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
 }
 
-.act-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.book-card {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.book-card:hover {
+  border-color: #0969da;
+  box-shadow: 0 8px 24px rgba(9, 105, 218, 0.12);
+  transform: translateY(-2px);
+}
+
+.book-header {
+  padding: 20px;
+  border-bottom: 1px solid #d0d7de;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.book-number {
+  width: 40px;
+  height: 40px;
+  background: #0969da;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.book-info {
+  flex: 1;
+}
+
+.book-info .book-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 4px 0;
+}
+
+.book-subtitle {
+  font-size: 14px;
+  color: #656d76;
+  margin: 0;
+  font-style: italic;
+}
+
+.book-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.book-content {
+  padding: 20px;
+}
+
+.book-description {
+  font-size: 14px;
+  color: #656d76;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+.book-section {
+  margin-bottom: 16px;
+}
+
+.book-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 8px 0;
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.event-item {
+  padding: 6px 0;
+  font-size: 13px;
+  color: #656d76;
+  border-left: 3px solid #d0d7de;
+  padding-left: 12px;
+  margin-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.event-item:hover {
+  border-left-color: #0969da;
+  background: #f6f8fa;
+  padding-left: 16px;
+}
+
+.theme-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.theme-tag {
+  background: #f3e8ff;
+  color: #9333ea;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.progress-section {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #d0d7de;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-section .progress-bar {
+  flex: 1;
+  margin: 0;
+}
+
+.progress-section .progress-text {
+  font-size: 12px;
+  color: #656d76;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* 剧情结构页面 */
+.acts-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.act-item {
+  display: flex;
+  gap: 24px;
+}
+
+.act-marker {
+  width: 50px;
+  height: 50px;
+  background: #0969da;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.act-marker::after {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 60px;
+  background: #d0d7de;
+}
+
+.act-item:last-child .act-marker::after {
+  display: none;
+}
+
+.act-content {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.2s ease;
+}
+
+.act-content:hover {
+  border-color: #0969da;
+  box-shadow: 0 3px 12px rgba(9, 105, 218, 0.12);
 }
 
 .act-header {
-  margin-bottom: 25px;
-  border-bottom: 2px solid #ecf0f1;
-  padding-bottom: 15px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #d0d7de;
 }
 
 .act-title {
-  color: #2c3e50;
-  font-size: 1.6rem;
-  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 8px 0;
 }
 
 .act-meta {
   display: flex;
-  gap: 20px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
-.act-time, .act-location {
-  color: #7f8c8d;
-  font-size: 0.9rem;
-  background: #ecf0f1;
-  padding: 5px 12px;
-  border-radius: 15px;
+.act-number,
+.chapter-range {
+  background: #dbeafe;
+  color: #0969da;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
-.events-list {
+.act-description {
+  font-size: 14px;
+  color: #656d76;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+.act-details {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-.event-item {
-  padding: 20px;
-  background: #f8f9fa;
+.detail-section {
+  background: #f6f8fa;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.detail-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 12px 0;
+}
+
+.moment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.moment-item {
+  padding: 4px 0;
+  font-size: 13px;
+  color: #656d76;
+  line-height: 1.4;
+}
+
+.emotional-arc {
+  font-size: 13px;
+  color: #656d76;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* 角色弧线页面 */
+.characters-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.character-group {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
   border-radius: 12px;
-  border-left: 4px solid #667eea;
+  padding: 24px;
 }
 
-.event-title {
-  color: #2c3e50;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+.group-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.event-description {
-  color: #5a6c7d;
-  line-height: 1.6;
-}
-
-.details-section {
-  margin-top: 60px;
-}
-
-.details-grid {
+.character-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
 }
 
-.detail-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.character-card {
+  background: #f6f8fa;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s ease;
 }
 
-.detail-card h3 {
-  color: #2c3e50;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+.character-card.protagonist {
+  border-left: 4px solid #16a34a;
 }
 
-.conflict-list, .theme-list {
+.character-card.antagonist {
+  border-left: 4px solid #dc2626;
+}
+
+.character-card:hover {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(31, 35, 40, 0.12);
+}
+
+.character-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.character-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0;
+}
+
+.character-role {
+  background: #dbeafe;
+  color: #0969da;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.character-arc,
+.character-growth,
+.character-motivation,
+.character-conflict {
+  font-size: 13px;
+  color: #656d76;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.character-arc:last-child,
+.character-growth:last-child,
+.character-motivation:last-child,
+.character-conflict:last-child {
+  margin-bottom: 0;
+}
+
+.character-arc strong,
+.character-growth strong,
+.character-motivation strong,
+.character-conflict strong {
+  color: #24292f;
+}
+
+/* 主题分析页面 */
+.themes-grid {
   display: grid;
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
 }
 
-.conflict-item, .theme-item {
-  padding: 15px;
-  background: #f8f9fa;
-  border-radius: 10px;
-  color: #5a6c7d;
-  line-height: 1.6;
+.theme-analysis-card {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
 }
 
-.conflict-item strong, .theme-item strong {
-  color: #2c3e50;
+.theme-analysis-card:hover {
+  border-color: #0969da;
+  box-shadow: 0 8px 24px rgba(9, 105, 218, 0.12);
+  transform: translateY(-2px);
+}
+
+.theme-card-header {
+  background: #f6f8fa;
+  padding: 20px;
+  border-bottom: 1px solid #d0d7de;
+}
+
+.theme-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0;
+}
+
+.theme-card-content {
+  padding: 20px;
+}
+
+.theme-card-description {
+  font-size: 14px;
+  color: #656d76;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.theme-examples {
+  background: #f6f8fa;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.examples-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 12px 0;
+}
+
+.examples-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.example-item {
+  padding: 6px 0;
+  font-size: 13px;
+  color: #656d76;
+  line-height: 1.4;
+  border-left: 3px solid #d0d7de;
+  padding-left: 12px;
+  margin-bottom: 6px;
+  transition: all 0.2s ease;
+}
+
+.example-item:hover {
+  border-left-color: #0969da;
+  background: #ffffff;
+  padding-left: 16px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .overview-section {
+    grid-template-columns: 1fr;
+  }
+
+  .trilogy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .act-details {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
   .page-title {
-    font-size: 2rem;
+    font-size: 24px;
   }
 
-  .section-title {
-    font-size: 1.8rem;
+  .tab-navigation {
+    flex-wrap: wrap;
   }
 
-  .act-meta {
+  .tab-btn {
+    flex: none;
+    min-width: calc(50% - 2px);
+  }
+
+  .act-item {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
-  .details-grid {
+  .act-marker {
+    align-self: flex-start;
+  }
+
+  .act-marker::after {
+    display: none;
+  }
+
+  .character-grid,
+  .themes-grid {
     grid-template-columns: 1fr;
   }
 }

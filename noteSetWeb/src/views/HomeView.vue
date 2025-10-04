@@ -1,442 +1,574 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const features = ref([
+const projectStats = ref({
+  stories: 2,
+  characters: 8,
+  worldElements: 12,
+  timelineEvents: 23
+})
+
+const recentUpdates = ref([
   {
-    title: '剧情大纲',
-    description: '完整的五幕剧情结构，从血色盟约到真相与救赎',
-    icon: '📖',
-    route: '/plot'
+    type: 'character',
+    title: '更新了洛瑟恩·暗星的背景设定',
+    time: '2 天前',
+    icon: '👑'
   },
   {
-    title: '人物设定',
-    description: '详细的主要角色设定，包括外貌、能力和背景故事',
-    icon: '👑',
-    route: '/characters'
+    type: 'plot',
+    title: '完善了《新枝叶的故事》第三部剧情',
+    time: '3 天前',
+    icon: '📖'
   },
   {
-    title: '世界观设定',
-    description: '三大种族、力量体系、重要势力和地点介绍',
-    icon: '🌍',
-    route: '/world'
+    type: 'world',
+    title: '添加了艾塞拉大陆的地理设定',
+    time: '5 天前',
+    icon: '🌍'
   },
   {
-    title: '大事件时间线',
-    description: '从星历元年到243年的重要历史事件',
-    icon: '📅',
-    route: '/timeline'
+    type: 'timeline',
+    title: '补充了星历243年的重要事件',
+    time: '1 周前',
+    icon: '📅'
+  }
+])
+
+const quickLinks = ref([
+  {
+    title: '故事概览',
+    description: '查看完整的故事结构和剧情发展',
+    link: '/plot',
+    icon: '📚',
+    color: 'blue'
+  },
+  {
+    title: '角色档案',
+    description: '浏览所有角色的详细设定信息',
+    link: '/characters',
+    icon: '👥',
+    color: 'green'
+  },
+  {
+    title: '世界设定',
+    description: '探索艾塞拉大陆的世界观设定',
+    link: '/world',
+    icon: '🗺️',
+    color: 'purple'
+  },
+  {
+    title: '历史时间线',
+    description: '按时间顺序查看重要历史事件',
+    link: '/timeline',
+    icon: '⏰',
+    color: 'orange'
   }
 ])
 </script>
 
 <template>
   <div class="home-view">
-    <div class="container">
-      <section class="hero-section">
-        <h1 class="hero-title">《追逐光的》</h1>
-        <p class="hero-subtitle">一个关于身份、命运与救赎的奇幻故事</p>
-        <div class="hero-description">
-          <p>围绕魔族王子与精灵公主的禁忌之恋，以及他们的混血后代打破三族仇恨循环的成长历程。</p>
-        </div>
-      </section>
+    <!-- 页面标题 -->
+    <div class="page-header">
+      <h1 class="page-title">
+        <span class="title-icon">✨</span>
+        追逐光的设定集
+      </h1>
+      <p class="page-description">
+        一个关于成长、友谊、身份认同和救赎的奇幻世界设定集合
+      </p>
+    </div>
 
-      <section class="features-section">
-        <h2 class="section-title">设定内容</h2>
-        <div class="features-grid">
-          <router-link
-            v-for="feature in features"
-            :key="feature.title"
-            :to="feature.route"
-            class="feature-card"
+    <!-- 统计卡片 -->
+    <div class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📖</div>
+          <div class="stat-content">
+            <div class="stat-number">{{ projectStats.stories }}</div>
+            <div class="stat-label">故事线</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">👑</div>
+          <div class="stat-content">
+            <div class="stat-number">{{ projectStats.characters }}</div>
+            <div class="stat-label">角色</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🌍</div>
+          <div class="stat-content">
+            <div class="stat-number">{{ projectStats.worldElements }}</div>
+            <div class="stat-label">世界元素</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📅</div>
+          <div class="stat-content">
+            <div class="stat-number">{{ projectStats.timelineEvents }}</div>
+            <div class="stat-label">历史事件</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要内容区域 -->
+    <div class="main-content">
+      <!-- 快速链接 -->
+      <section class="quick-links-section">
+        <h2 class="section-title">
+          <span class="title-icon">🚀</span>
+          快速导航
+        </h2>
+        <div class="quick-links-grid">
+          <RouterLink
+            v-for="link in quickLinks"
+            :key="link.link"
+            :to="link.link"
+            :class="['quick-link-card', `color-${link.color}`]"
           >
-            <div class="feature-icon">{{ feature.icon }}</div>
-            <h3 class="feature-title">{{ feature.title }}</h3>
-            <p class="feature-description">{{ feature.description }}</p>
-          </router-link>
+            <div class="card-icon">{{ link.icon }}</div>
+            <div class="card-content">
+              <h3 class="card-title">{{ link.title }}</h3>
+              <p class="card-description">{{ link.description }}</p>
+            </div>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <path fillRule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path>
+              </svg>
+            </div>
+          </RouterLink>
         </div>
       </section>
 
-      <section class="stats-section">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-number">5</div>
-            <div class="stat-label">主要角色</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">3</div>
-            <div class="stat-label">种族</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">243</div>
-            <div class="stat-label">故事年份</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">15+</div>
-            <div class="stat-label">重要事件</div>
+      <!-- 最近更新 -->
+      <section class="recent-updates-section">
+        <h2 class="section-title">
+          <span class="title-icon">🔄</span>
+          最近更新
+        </h2>
+        <div class="updates-list">
+          <div
+            v-for="update in recentUpdates"
+            :key="update.title"
+            class="update-item"
+          >
+            <div class="update-icon">{{ update.icon }}</div>
+            <div class="update-content">
+              <div class="update-title">{{ update.title }}</div>
+              <div class="update-time">{{ update.time }}</div>
+            </div>
           </div>
         </div>
       </section>
     </div>
+
+    <!-- 项目介绍 -->
+    <section class="project-intro">
+      <div class="intro-card">
+        <h2 class="intro-title">关于这个项目</h2>
+        <div class="intro-content">
+          <p>
+            《追逐光的》是一个包含两个主要故事的奇幻设定集：《为了什么活着》和《新枝叶的故事》。
+            这个世界讲述了在艾塞拉大陆上，魔族、精灵族和人类之间复杂关系的演变，
+            以及跨越两代人的成长、爱情、友谊和救赎的故事。
+          </p>
+          <p>
+            故事的核心围绕着洛瑟恩·暗星（魔王）与艾莉安·银叶（精灵公主）的禁忌之恋，
+            以及他们的女儿瑟莉安·星叶/西里斯·弗拉尔从复仇到救赎的成长历程。
+          </p>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <style scoped>
 .home-view {
-  min-height: calc(100vh - 200px);
-  overflow-x: hidden;
-}
-
-.container {
-  max-width: 95%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0;
 }
 
-.hero-section {
+/* 页面标题 */
+.page-header {
   text-align: center;
-  padding: 80px 0;
-  color: white;
+  margin-bottom: 32px;
+  padding: 32px 0;
+  border-bottom: 1px solid #d0d7de;
 }
 
-.hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(45deg, #fff, #f0f0f0);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1.2;
+.page-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
-.hero-subtitle {
-  font-size: clamp(1.1rem, 3vw, 1.5rem);
-  margin-bottom: 30px;
-  opacity: 0.9;
-  line-height: 1.4;
+.title-icon {
+  font-size: 28px;
 }
 
-.hero-description {
+.page-description {
+  font-size: 16px;
+  color: #656d76;
+  margin: 0;
   max-width: 600px;
   margin: 0 auto;
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
-  line-height: 1.6;
-  opacity: 0.8;
-  padding: 0 10px;
+  line-height: 1.5;
 }
 
-.section-title {
-  text-align: center;
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  color: white;
-  margin-bottom: 50px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.features-section {
-  padding: 60px 0 80px;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-  max-width: none;
-}
-
-.feature-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 35px 25px;
-  border-radius: 20px;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  overflow: hidden;
-}
-
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
-}
-
-.feature-card:hover::before {
-  left: 100%;
-}
-
-.feature-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 1);
-}
-
-.feature-icon {
-  font-size: clamp(2.5rem, 4vw, 3rem);
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-}
-
-.feature-card:hover .feature-icon {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.feature-title {
-  font-size: clamp(1.3rem, 2.5vw, 1.5rem);
-  color: #2c3e50;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-.feature-description {
-  color: #7f8c8d;
-  line-height: 1.6;
-  font-size: clamp(0.9rem, 2vw, 0.95rem);
-}
-
+/* 统计卡片 */
 .stats-section {
-  padding: 40px 0 60px;
+  margin-bottom: 32px;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
-  max-width: none;
+  gap: 16px;
 }
 
-.stat-item {
-  text-align: center;
-  color: white;
-  padding: 25px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+.stat-card {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.2s ease;
 }
 
-.stat-item:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-5px);
+.stat-card:hover {
+  border-color: #0969da;
+  box-shadow: 0 3px 12px rgba(9, 105, 218, 0.12);
+}
+
+.stat-icon {
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f8fa;
+  border-radius: 8px;
+}
+
+.stat-content {
+  flex: 1;
 }
 
 .stat-number {
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  font-weight: bold;
-  margin-bottom: 10px;
-  background: linear-gradient(45deg, #fff, #f0f0f0);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 24px;
+  font-weight: 600;
+  color: #24292f;
+  line-height: 1;
 }
 
 .stat-label {
-  font-size: clamp(1rem, 2vw, 1.1rem);
-  opacity: 0.8;
+  font-size: 14px;
+  color: #656d76;
+  margin-top: 4px;
 }
 
-/* 平板设备 */
+/* 主要内容 */
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* 快速链接 */
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.quick-link-card {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.quick-link-card:hover {
+  border-color: #0969da;
+  box-shadow: 0 3px 12px rgba(9, 105, 218, 0.12);
+  transform: translateY(-1px);
+}
+
+.card-icon {
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.quick-link-card.color-blue .card-icon {
+  background: #dbeafe;
+  color: #0969da;
+}
+
+.quick-link-card.color-green .card-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.quick-link-card.color-purple .card-icon {
+  background: #f3e8ff;
+  color: #9333ea;
+}
+
+.quick-link-card.color-orange .card-icon {
+  background: #fed7aa;
+  color: #ea580c;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 4px 0;
+}
+
+.card-description {
+  font-size: 14px;
+  color: #656d76;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.card-arrow {
+  color: #656d76;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.quick-link-card:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* 最近更新 */
+.updates-list {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.update-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid #d0d7de;
+  transition: background-color 0.2s ease;
+}
+
+.update-item:last-child {
+  border-bottom: none;
+}
+
+.update-item:hover {
+  background-color: #f6f8fa;
+}
+
+.update-icon {
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f8fa;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.update-content {
+  flex: 1;
+}
+
+.update-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #24292f;
+  margin-bottom: 2px;
+}
+
+.update-time {
+  font-size: 12px;
+  color: #656d76;
+}
+
+/* 项目介绍 */
+.project-intro {
+  margin-bottom: 32px;
+}
+
+.intro-card {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.intro-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 16px 0;
+}
+
+.intro-content p {
+  font-size: 14px;
+  color: #656d76;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.intro-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* 响应式设计 */
 @media (max-width: 1024px) {
-  .container {
-    padding: 0 30px;
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
-  .hero-section {
-    padding: 60px 0;
-  }
-
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .quick-links-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-/* 移动设备 */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 15px;
+  .page-header {
+    padding: 24px 0;
   }
 
-  .hero-section {
-    padding: 40px 0;
-  }
-
-  .hero-description {
-    padding: 0 5px;
-  }
-
-  .features-section {
-    padding: 40px 0 60px;
-  }
-
-  .section-title {
-    margin-bottom: 30px;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-top: 30px;
-  }
-
-  .feature-card {
-    padding: 30px 20px;
-    margin: 0 5px;
-  }
-
-  .stats-section {
-    padding: 30px 0 40px;
+  .page-title {
+    font-size: 24px;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .stat-item {
-    padding: 20px 15px;
-  }
-}
-
-/* 小屏幕移动设备 */
-@media (max-width: 480px) {
-  .container {
-    padding: 0 10px;
-  }
-
-  .hero-section {
-    padding: 30px 0;
-  }
-
-  .feature-card {
-    padding: 25px 15px;
-    margin: 0;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
     gap: 12px;
   }
 
-  .stat-item {
-    padding: 18px 12px;
+  .stat-card {
+    padding: 16px;
+  }
+
+  .quick-link-card {
+    padding: 16px;
+  }
+
+  .intro-card {
+    padding: 20px;
   }
 }
 
-/* 超小屏幕 */
-@media (max-width: 360px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-  }
-
-  .feature-card {
-    padding: 20px 12px;
-  }
-}
-
-/* 触摸设备优化 */
-@media (hover: none) and (pointer: coarse) {
-  .feature-card:hover {
-    transform: none;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  }
-
-  .feature-card:active {
-    transform: translateY(-3px) scale(0.98);
-  }
-
-  .stat-item:hover {
-    transform: none;
-  }
-
-  .stat-item:active {
-    background: rgba(255, 255, 255, 0.2);
-  }
-}
-
-/* 大屏幕优化 */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 90%;
-    padding: 0 60px;
-  }
-
-  .features-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 35px;
-  }
-
+@media (max-width: 480px) {
   .stats-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    flex-direction: column;
+    gap: 8px;
   }
 }
 
-/* 超大屏幕优化 */
-@media (min-width: 1600px) {
-  .container {
-    max-width: 85%;
-    padding: 0 80px;
+/* 深色主题支持 */
+@media (prefers-color-scheme: dark) {
+  .page-title {
+    color: #f0f6fc;
   }
 
-  .features-grid {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
+  .page-description {
+    color: #8b949e;
   }
 
-  .stats-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 35px;
-  }
-}
-
-/* 4K及以上屏幕优化 */
-@media (min-width: 2000px) {
-  .container {
-    max-width: 80%;
-    padding: 0 100px;
+  .stat-card,
+  .quick-link-card,
+  .updates-list,
+  .intro-card {
+    background: #161b22;
+    border-color: #30363d;
   }
 
-  .hero-section {
-    padding: 100px 0;
+  .stat-card:hover,
+  .quick-link-card:hover {
+    border-color: #58a6ff;
+    box-shadow: 0 3px 12px rgba(88, 166, 255, 0.12);
   }
 
-  .features-section {
-    padding: 80px 0 100px;
+  .stat-icon {
+    background: #21262d;
   }
 
-  .features-grid {
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 45px;
+  .stat-number,
+  .card-title,
+  .section-title,
+  .intro-title {
+    color: #f0f6fc;
   }
 
-  .stats-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 40px;
+  .stat-label,
+  .card-description,
+  .update-time,
+  .intro-content p {
+    color: #8b949e;
+  }
+
+  .update-item:hover {
+    background-color: #21262d;
+  }
+
+  .update-icon {
+    background: #21262d;
+  }
+
+  .update-title {
+    color: #f0f6fc;
   }
 }
 </style>

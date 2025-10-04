@@ -11,14 +11,15 @@ const characters = ref([
     englishName: "Lorthen Darkstar",
     category: "main",
     role: "魔族王子/魔王",
-    description: "「月光撕裂黑夜」，暗示其美貌足以动摇既定秩序",
+    story: "《为了什么活着》",
+    description: "「月光撕裂黑夜」，通过政治斗争成为魔王，推翻兄长暴政统治",
     appearance: {
       hair: "银白色长发如月华流淌至腰间，发梢泛着极淡的冰蓝色光泽",
       eyes: "左眼熔金色竖瞳，右眼深紫色带星辰纹路",
       features: "兼具魔族的锐利与近乎神性的柔美"
     },
-    abilities: ["龙瞳压制", "魔族王室血脉", "政治斗争"],
-    background: "通过政治斗争而非传统继承成为魔王，推翻兄长暴政统治"
+    abilities: ["龙瞳压制", "魔族王室血脉", "政治斗争", "魔力操控"],
+    background: "星历180年登基，在和谈中失去挚爱艾莉安，16年后与女儿瑟莉安重逢并相认"
   },
   {
     id: 2,
@@ -26,66 +27,118 @@ const characters = ref([
     englishName: "Aeliane Silverleaf",
     category: "main",
     role: "精灵公主",
-    description: "「破晓时第一缕风」，伊瑟拉的直系血脉",
+    story: "《为了什么活着》",
+    description: "「破晓时第一缕风」，伊瑟拉的直系血脉，为和平而牺牲",
     appearance: {
       hair: "及膝的淡绿色卷发如初春藤蔓，发间缠绕自发光银叶头饰",
       eyes: "琥珀色瞳孔，虹膜纹理如年轮，凝视时可见森林倒影",
       features: "透出珍珠般光泽的皮肤，比寻常精灵更纤长的耳朵"
     },
-    abilities: ["植物低语", "幻术免疫", "自然魔法"],
-    background: "精灵王室血脉，能听见植物低语，在和谈中为促成和平而牺牲"
+    abilities: ["植物低语", "幻术免疫", "自然魔法", "治愈术"],
+    background: "精灵王室血脉，在星历227年和谈中遇刺身亡，临终前将女儿托付给莉娜"
   },
   {
     id: 3,
-    name: "卡莱尔·辉刃",
-    englishName: "Carlyle Brightblade",
+    name: "西里斯·弗拉尔/瑟莉安·星叶",
+    englishName: "Cyris Flayer/Selyane Starleaf",
     category: "main",
-    role: "前任勇者",
-    description: "原教廷圣骑士，在和谈中被内鬼杀死",
+    role: "混血后代/新生代希望",
+    story: "《新枝叶的故事》",
+    description: "洛瑟恩与艾莉安的女儿，经历从幸福少年到复仇战士再到和平使者的转变",
     appearance: {
-      hair: "灿金色短发凌乱，前额一绺突兀的银发",
-      eyes: "右眼偶尔泛起紫光，魔化时紫色瞳孔扩散至整个眼球",
-      features: "兼具少年明朗与战士沧桑，左颊伤疤从眉骨延伸至唇角"
+      hair: "继承父亲银发，发梢渐变为母亲的淡绿色",
+      eyes: "平日呈精灵的琥珀色，情绪波动时闪现父亲的熔金竖瞳",
+      features: "精灵神树重塑后的外貌，耳背有微型银叶胎记"
     },
-    abilities: ["圣剑技", "魔化能力", "战斗经验"],
-    background: "被教廷宣传为牺牲自己重创魔王的英雄，实际在和谈中被杀"
+    abilities: ["植物感知", "龙瞳魔力", "草药学天赋", "传送阵法"],
+    background: "星历227年出生，被重塑身体在绿荫镇成长，后觉醒真实身份"
   },
   {
     id: 4,
-    name: "西里斯·弗拉尔",
-    englishName: "Cyris Flayer",
-    category: "main",
-    role: "混血后代",
-    description: "洛瑟恩与艾莉安的女儿，被重塑为男身",
-    appearance: {
-      hair: "继承父亲银发，发梢渐变为母亲的淡绿色，扎成两条长辫",
-      eyes: "平日呈精灵的琥珀色，情绪波动时闪现父亲的熔金竖瞳",
-      features: "尖耳被幻术化为圆润耳垂，耳背有微型银叶胎记"
-    },
-    abilities: ["植物感知", "龙瞳魔力", "草药学天赋"],
-    background: "1岁时被精灵神树重塑身体，在人类王国绿叶镇成长"
-  },
-  {
-    id: 5,
     name: "凯恩·曙光",
     englishName: "Kane Dawnlight",
     category: "main",
     role: "现任勇者",
-    description: "新一代勇者，体内植入前任勇者卡莱尔的灵魂碎片",
+    story: "《新枝叶的故事》",
+    description: "新一代勇者，西里斯在学院的挚友，乐观开朗的人类少年",
     appearance: {
-      hair: "金发蓝眼",
+      hair: "金色短发，阳光般明亮",
       eyes: "蓝色眼睛，战斗时会发光",
-      features: "乐观开朗的面容"
+      features: "乐观开朗的面容，充满正义感"
     },
-    abilities: ["圣剑技", "灵魂共鸣", "治愈能力"],
-    background: "被教会从战场废墟捡回的孤儿，实际是魔族与人类混血"
+    abilities: ["圣剑技", "治愈能力", "光明魔法", "领导力"],
+    background: "三王冠联合战争学院学生，与西里斯、艾薇拉组成要好的三人组"
+  },
+  {
+    id: 5,
+    name: "艾薇拉·银辉",
+    englishName: "Evilla Silverglow",
+    category: "main",
+    role: "贵族大小姐",
+    story: "《新枝叶的故事》",
+    description: "傲娇的贵族大小姐，对西里斯有特殊感情，擅长传送阵法",
+    appearance: {
+      hair: "银色长发，精心打理",
+      eyes: "紫色眼睛，透露出高贵气质",
+      features: "精致的贵族容貌，略带傲慢但善良"
+    },
+    abilities: ["传送阵法", "空间魔法", "贵族礼仪", "战术分析"],
+    background: "银辉城邦贵族出身，在学院中与西里斯和凯恩建立深厚友谊"
+  },
+  {
+    id: 6,
+    name: "莉娜·晨光",
+    englishName: "Lina Dawnlight",
+    category: "support",
+    role: "艾莉安的侍女",
+    story: "两个故事",
+    description: "精灵贵族出身，艾莉安的贴身侍女和密友，承担抚养瑟莉安的重任",
+    appearance: {
+      hair: "浅金色长发，温和的精灵特征",
+      eyes: "绿色眼睛，充满慈爱",
+      features: "温和善良的面容，成熟稳重"
+    },
+    abilities: ["治疗法术", "伪装技巧", "调查能力", "照顾他人"],
+    background: "在和谈破裂中救出瑟莉安，后化名游商格温暗中保护西里斯"
+  },
+  {
+    id: 7,
+    name: "罗南·弗拉尔",
+    englishName: "Ronan Flayer",
+    category: "support",
+    role: "西里斯的哥哥",
+    story: "《新枝叶的故事》",
+    description: "弗拉尔家族的长子，西里斯的养兄，在绿荫镇毁灭中幸存",
+    appearance: {
+      hair: "棕色短发，朴实的农家青年",
+      eyes: "棕色眼睛，坚毅而温和",
+      features: "健壮的体格，诚实可靠的面容"
+    },
+    abilities: ["农业技能", "基础战斗", "手工制作", "照顾他人"],
+    background: "比西里斯大3岁的养兄，因外出而在绿荫镇毁灭中幸存，后与瑟莉安重逢"
+  },
+  {
+    id: 8,
+    name: "卡莱尔·辉刃",
+    englishName: "Carlyle Brightblade",
+    category: "support",
+    role: "前任勇者",
+    story: "《为了什么活着》",
+    description: "原教廷圣骑士，在和谈中被内鬼杀死的悲剧英雄",
+    appearance: {
+      hair: "灿金色短发凌乱，前额一绺突兀的银发",
+      eyes: "蓝色眼睛，充满正义感",
+      features: "兼具少年的明朗与战士的沧桑"
+    },
+    abilities: ["圣剑技", "治愈术", "战斗经验", "正义感召"],
+    background: "被教廷宣传为牺牲自己重创魔王的英雄，实际是和谈破裂的受害者"
   }
 ])
 
 const categories = ref([
   { value: 'all', label: '全部角色' },
   { value: 'main', label: '主要角色' },
-  { value: 'support', label: '配角' }
+  { value: 'support', label: '重要配角' }
 ])
 
 const filteredCharacters = computed(() => {
@@ -111,11 +164,24 @@ const filteredCharacters = computed(() => {
 
 <template>
   <div class="character-view">
-    <div class="container">
-      <h1 class="page-title">人物设定</h1>
+    <!-- 页面标题 -->
+    <div class="page-header">
+      <h1 class="page-title">
+        <span class="title-icon">👑</span>
+        人物设定
+      </h1>
+      <p class="page-description">
+        探索《追逐光的》世界中的角色档案和详细设定
+      </p>
+    </div>
 
-      <div class="filters-section">
+    <!-- 搜索和筛选 -->
+    <div class="filters-section">
+      <div class="search-container">
         <div class="search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path fillRule="evenodd" d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"></path>
+          </svg>
           <input
             v-model="searchQuery"
             type="text"
@@ -123,70 +189,103 @@ const filteredCharacters = computed(() => {
             class="search-input"
           />
         </div>
-
-        <div class="category-filters">
-          <button
-            v-for="category in categories"
-            :key="category.value"
-            @click="selectedCategory = category.value"
-            :class="['filter-btn', { active: selectedCategory === category.value }]"
-          >
-            {{ category.label }}
-          </button>
-        </div>
       </div>
 
+      <div class="category-filters">
+        <button
+          v-for="category in categories"
+          :key="category.value"
+          @click="selectedCategory = category.value"
+          :class="['filter-btn', { active: selectedCategory === category.value }]"
+        >
+          {{ category.label }}
+        </button>
+      </div>
+    </div>
+
+    <!-- 角色列表 -->
+    <div class="characters-section">
       <div class="characters-grid">
         <div
           v-for="character in filteredCharacters"
           :key="character.id"
           class="character-card"
         >
+          <!-- 角色头部信息 -->
           <div class="character-header">
-            <h3 class="character-name">{{ character.name }}</h3>
-            <p class="character-english">{{ character.englishName }}</p>
-            <span class="character-role">{{ character.role }}</span>
+            <div class="character-avatar">
+              {{ character.name.charAt(0) }}
+            </div>
+            <div class="character-basic">
+              <h3 class="character-name">{{ character.name }}</h3>
+              <p class="character-english">{{ character.englishName }}</p>
+              <div class="character-tags">
+                <span class="role-tag">{{ character.role }}</span>
+                <span v-if="character.story" class="story-tag">{{ character.story }}</span>
+              </div>
+            </div>
           </div>
 
-          <div class="character-content">
-            <div class="character-description">
-              <p>{{ character.description }}</p>
+          <!-- 角色描述 -->
+          <div class="character-description">
+            <p>{{ character.description }}</p>
+          </div>
+
+          <!-- 角色详细信息 -->
+          <div class="character-details">
+            <!-- 外貌特征 -->
+            <div class="detail-section">
+              <h4 class="detail-title">
+                <span class="detail-icon">👤</span>
+                外貌特征
+              </h4>
+              <div class="appearance-list">
+                <div class="appearance-item">
+                  <strong>发色：</strong>{{ character.appearance.hair }}
+                </div>
+                <div class="appearance-item">
+                  <strong>眼睛：</strong>{{ character.appearance.eyes }}
+                </div>
+                <div class="appearance-item">
+                  <strong>特征：</strong>{{ character.appearance.features }}
+                </div>
+              </div>
             </div>
 
-            <div class="character-details">
-              <div class="detail-section">
-                <h4>外貌特征</h4>
-                <div class="appearance-details">
-                  <p><strong>发色：</strong>{{ character.appearance.hair }}</p>
-                  <p><strong>眼睛：</strong>{{ character.appearance.eyes }}</p>
-                  <p><strong>特征：</strong>{{ character.appearance.features }}</p>
-                </div>
+            <!-- 特殊能力 -->
+            <div class="detail-section">
+              <h4 class="detail-title">
+                <span class="detail-icon">⚡</span>
+                特殊能力
+              </h4>
+              <div class="abilities-list">
+                <span
+                  v-for="ability in character.abilities"
+                  :key="ability"
+                  class="ability-tag"
+                >
+                  {{ ability }}
+                </span>
               </div>
+            </div>
 
-              <div class="detail-section">
-                <h4>特殊能力</h4>
-                <div class="abilities-list">
-                  <span
-                    v-for="ability in character.abilities"
-                    :key="ability"
-                    class="ability-tag"
-                  >
-                    {{ ability }}
-                  </span>
-                </div>
-              </div>
-
-              <div class="detail-section">
-                <h4>背景故事</h4>
-                <p class="background-text">{{ character.background }}</p>
-              </div>
+            <!-- 背景故事 -->
+            <div class="detail-section">
+              <h4 class="detail-title">
+                <span class="detail-icon">📖</span>
+                背景故事
+              </h4>
+              <p class="background-text">{{ character.background }}</p>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- 无结果提示 -->
       <div v-if="filteredCharacters.length === 0" class="no-results">
-        <p>没有找到匹配的角色</p>
+        <div class="no-results-icon">🔍</div>
+        <h3>没有找到匹配的角色</h3>
+        <p>尝试调整搜索条件或选择不同的分类</p>
       </div>
     </div>
   </div>
@@ -194,204 +293,386 @@ const filteredCharacters = computed(() => {
 
 <style scoped>
 .character-view {
-  min-height: 100vh;
-  padding: 20px 0;
-}
-
-.container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+}
+
+/* 页面标题 */
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #d0d7de;
 }
 
 .page-title {
-  text-align: center;
-  font-size: 3rem;
-  color: white;
-  margin-bottom: 40px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 32px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
+.title-icon {
+  font-size: 28px;
+}
+
+.page-description {
+  font-size: 16px;
+  color: #656d76;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* 搜索和筛选 */
 .filters-section {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 20px;
-  margin-bottom: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.search-container {
+  margin-bottom: 20px;
 }
 
 .search-box {
-  margin-bottom: 20px;
+  position: relative;
+  max-width: 400px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #656d76;
 }
 
 .search-input {
   width: 100%;
-  padding: 15px 20px;
-  border: 2px solid #ecf0f1;
-  border-radius: 25px;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.3s ease;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #f6f8fa;
+  transition: all 0.2s ease;
 }
 
 .search-input:focus {
-  border-color: #667eea;
+  outline: none;
+  border-color: #0969da;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.12);
 }
 
 .category-filters {
   display: flex;
-  gap: 15px;
+  gap: 8px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .filter-btn {
-  padding: 10px 20px;
-  border: 2px solid #ecf0f1;
-  background: white;
-  border-radius: 20px;
+  padding: 6px 16px;
+  border: 1px solid #d0d7de;
+  background: #f6f8fa;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
-  color: #34495e;
+  font-size: 14px;
+  font-weight: 500;
+  color: #24292f;
+  transition: all 0.2s ease;
 }
 
 .filter-btn:hover {
-  border-color: #667eea;
-  color: #667eea;
+  background: #ffffff;
+  border-color: #0969da;
 }
 
 .filter-btn.active {
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  color: white;
-  border-color: transparent;
+  background: #0969da;
+  color: #ffffff;
+  border-color: #0969da;
 }
 
+/* 角色卡片 */
 .characters-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 24px;
 }
 
 .character-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .character-card:hover {
-  transform: translateY(-5px);
+  border-color: #0969da;
+  box-shadow: 0 8px 24px rgba(9, 105, 218, 0.12);
+  transform: translateY(-2px);
 }
 
 .character-header {
-  background: linear-gradient(45deg, #667eea, #764ba2);
+  padding: 20px;
+  border-bottom: 1px solid #d0d7de;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.character-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0969da, #0550ae);
   color: white;
-  padding: 25px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.character-basic {
+  flex: 1;
 }
 
 .character-name {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 4px 0;
 }
 
 .character-english {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin-bottom: 10px;
+  font-size: 14px;
+  color: #656d76;
+  margin: 0 0 8px 0;
+  font-style: italic;
 }
 
-.character-role {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 5px 15px;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 600;
+.character-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.character-content {
-  padding: 25px;
+.role-tag {
+  background: #dbeafe;
+  color: #0969da;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.story-tag {
+  background: #f0fdf4;
+  color: #16a34a;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .character-description {
-  margin-bottom: 20px;
-  padding: 15px;
-  background: #f8f9fa;
-  border-radius: 10px;
-  color: #5a6c7d;
-  line-height: 1.6;
+  padding: 16px 20px;
+  border-bottom: 1px solid #d0d7de;
+}
+
+.character-description p {
+  font-size: 14px;
+  color: #656d76;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .character-details {
-  display: grid;
-  gap: 20px;
+  padding: 20px;
 }
 
-.detail-section h4 {
-  color: #2c3e50;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  border-bottom: 2px solid #ecf0f1;
-  padding-bottom: 5px;
+.detail-section {
+  margin-bottom: 20px;
 }
 
-.appearance-details p {
-  margin-bottom: 8px;
-  color: #5a6c7d;
-  line-height: 1.5;
+.detail-section:last-child {
+  margin-bottom: 0;
 }
 
-.appearance-details strong {
-  color: #2c3e50;
+.detail-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.detail-icon {
+  font-size: 14px;
+}
+
+.appearance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.appearance-item {
+  font-size: 13px;
+  color: #656d76;
+  line-height: 1.4;
+}
+
+.appearance-item strong {
+  color: #24292f;
 }
 
 .abilities-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .ability-tag {
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  color: white;
-  padding: 5px 12px;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 600;
+  background: #f3e8ff;
+  color: #9333ea;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .background-text {
-  color: #5a6c7d;
-  line-height: 1.6;
+  font-size: 13px;
+  color: #656d76;
+  line-height: 1.5;
+  margin: 0;
 }
 
+/* 无结果提示 */
 .no-results {
   text-align: center;
   padding: 60px 20px;
-  color: white;
-  font-size: 1.2rem;
+  color: #656d76;
 }
 
-@media (max-width: 768px) {
-  .page-title {
-    font-size: 2rem;
-  }
+.no-results-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
 
+.no-results h3 {
+  font-size: 20px;
+  color: #24292f;
+  margin: 0 0 8px 0;
+}
+
+.no-results p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
   .characters-grid {
     grid-template-columns: 1fr;
   }
 
-  .category-filters {
-    justify-content: flex-start;
+  .page-title {
+    font-size: 24px;
+  }
+
+  .filters-section {
+    padding: 20px;
+  }
+
+  .character-header {
+    padding: 16px;
+  }
+
+  .character-details {
+    padding: 16px;
+  }
+}
+
+/* 深色主题支持 */
+@media (prefers-color-scheme: dark) {
+  .page-title {
+    color: #f0f6fc;
+  }
+
+  .page-description {
+    color: #8b949e;
+  }
+
+  .filters-section,
+  .character-card {
+    background: #161b22;
+    border-color: #30363d;
+  }
+
+  .character-card:hover {
+    border-color: #58a6ff;
+    box-shadow: 0 8px 24px rgba(88, 166, 255, 0.12);
+  }
+
+  .search-input {
+    background: #21262d;
+    border-color: #30363d;
+    color: #f0f6fc;
+  }
+
+  .search-input:focus {
+    border-color: #58a6ff;
+    background: #0d1117;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.12);
   }
 
   .filter-btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    background: #21262d;
+    border-color: #30363d;
+    color: #f0f6fc;
+  }
+
+  .filter-btn:hover {
+    background: #30363d;
+    border-color: #58a6ff;
+  }
+
+  .filter-btn.active {
+    background: #58a6ff;
+    border-color: #58a6ff;
+  }
+
+  .character-name,
+  .detail-title {
+    color: #f0f6fc;
+  }
+
+  .character-english,
+  .character-description p,
+  .appearance-item,
+  .background-text {
+    color: #8b949e;
+  }
+
+  .appearance-item strong {
+    color: #f0f6fc;
+  }
+
+  .no-results h3 {
+    color: #f0f6fc;
   }
 }
 </style>
